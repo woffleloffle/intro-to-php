@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Intro to PHP</title>
+
+        <meta name="description" content="An introduction to PHP at the Open Window.">
+        <meta name="author" content="Willem Labu">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>Intro to PHP</h1>
+                    <h3>Week 1</h3>
+                    <p>
+                        <small><a href="http://pwl.co.za">Willem Labu</a> / <a href="http://twitter.com/willemlabu">@willemlabu</a></small>
+                    </p>
+                </section>
+
+                <section>
+
+                    <section>
+                        <h2>This class</h2>
+                        <ul>
+                            <li>What is PHP?</li>
+                            <li>Where does it fit in?</li>
+                            <li>What you need to run PHP</li>
+                            <li>Beginner Basics</li>
+                            <li>Variables &amp; Typing</li>
+                            <li>Operators</li>
+                            <li>Logic &amp; Control Structures</li>
+                            <li>Debugging</li>
+                            <li>Git &amp; Github.com</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Coming up</h2>
+                        <ul>
+                            <li>Functions &amp; Classes</li>
+                            <li>Sessions &amp; Parameters</li>
+                            <li>Client Integration</li>
+                            <li>Server Integration</li>
+                            <li>Databases &amp; MySQL</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Then, the real fun</h2>
+                        <ul>
+                            <li>Creating a database</li>
+                            <li>Reading from a database</li>
+                            <li>Writing to a database</li>
+                            <li>Authentication</li>
+                            <li>WordPress</li>
+                            <li>PHP Frameworks</li>
+                        </ul>
+                    </section>
+                
+                </section>
+
+                <section>
+                    
+                    <section>
+                        <h1>What is PHP?</h1>
+                    </section>
+
+                    <section>
+                        <h2><u>P</u>HP: <u>H</u>yperText <u>P</u>reprocessor</h2>
+                        <p>
+                            <a href="http://en.wikipedia.org/wiki/Recursive_acronym" target="_blank">Recursive</a>
+                            <a href="http://en.wikipedia.org/wiki/Backronym" target="_blank">backronym</a>
+                        </p>
+                    </section>
+
+                    <section>
+                        <p>It's a lot like JavaScript.</p>
+                        <p>They share syntactical structure.</p>
+                        <p>They are both scripting languages.</p>
+                    </section>
+
+                    <section>
+                        <h2>Where exactly PHP fits</h2>
+                    </section>
+
+                    <section>
+                        <h2>How web servers work</h2>
+                        <img src="http://s.hswstatic.com/gif/webserver-basic-sm.gif" />
+                    </section>
+
+                    <section>
+                        <p>PHP is <b>executed on the server</b>, after the request, and before the response.</p>
+                    </section>
+
+                    <section>
+                        <h3>PHP <b>versus</b> JS</h3>
+                        <p class="fragment">The server gets a request from a client.</p>
+                        <p class="fragment">PHP <b>creates</b> the DOM, and hands it to the server.</p>
+                        <p class="fragment">The server then sends the whole document to the client.</p>
+                        <p class="fragment">The browser renders the DOM, and loads all additional assets.</p>
+                        <p class="fragment">Once the page is rendered and the <b>JS is loaded</b>, JS can manipulate the DOM.</p>
+                    </section>
+
+                </section>
+
+                <section>
+
+                    <section>
+                        <h2>Things you need</h2>
+                        <ul>
+                            <li>A website + domain</li>
+                            <li class="fragment">PHP</li>
+                            <li class="fragment">Web server <span class="fragment">(Apache, IIS, nginx, <a href="http://en.wikipedia.org/wiki/Comparison_of_web_server_software" target="_blank">etc</a>.)</span></li>
+                            <li>?</li>
+                            <li>Profit!</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Packaged Solutions</h2>
+                        <p><b>A</b>pache / <b>M</b>ySQL / <b>P</b>HP / <b>P</b>erl / <b>S</b>oftaculous</p>
+                        <ul>
+                            <li><a href="https://www.apachefriends.org/" target="_blank">XAMPP</a></li>
+                            <li><a href="http://www.ampps.com/" target="_blank">AMPPS</a></li>
+                            <li><a href="http://www.wampserver.com/en/" target="_blank">WAMPP</a> (Win)</li>
+                        </ul>
+                        <p><small>Open source is <em>awesome!</em></small></p>
+                    </section>
+
+                </section>
+
+                <section>
+
+                    <section>
+                        <h1>Let's go!</h1>
+                        <code>the basics of php code</code>
+                    </section>
+
+                    <section>
+                        <h3>File Extension!</h3>
+                        <h1 class="fragment">.php</h1>
+                    </section>
+
+                    <section>
+                        <h2>Self contained</h2>
+<pre><code>
+  &lt;?php
+
+    // Code goes here
+
+  ?&gt;
+
+</code></pre>
+                        <p><a href="../examples/myscript.php" target="_blank">myscript.php</a></p>
+                    </section>
+
+                    <section>
+                        <h2>Inline</h2>
+<pre><code>
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;Awesome title!&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+  
+      &lt;?php
+
+        // Code goes here
+
+      ?&gt;
+
+    &lt;/body&gt;
+  &lt;/html&gt;
+
+</code></pre>
+                        <p>Filename: <a class="fragment" href="../examples/index.php" target="_blank">index.php</a></p>
+                    </section>
+
+                    <section>
+                        <h2>Multiple Inline</h2>
+<pre><code>
+  &lt;?php
+
+    // First script block
+
+  ?&gt;
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;Awesome title!&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+  
+      &lt;?php
+
+        // Second script block
+
+      ?&gt;
+
+    &lt;/body&gt;
+  &lt;/html&gt;
+
+</code></pre>
+                    </section>
+
+                    <section>
+                        <h1>Hello World!</h1>
+                    </section>
+        
+                    <section>
+                        <h2>Self contained</h2>
+<pre><code>
+  &lt;?php
+
+    echo "Hello World!";
+
+  ?&gt;
+
+</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Inline</h2>
+<pre><code>
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;Hello World!&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+  
+      &lt;?php
+
+        echo "Hello World!";
+
+      ?&gt;
+
+    &lt;/body&gt;
+  &lt;/html&gt;
+
+</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Multiple Inline</h2>
+<pre><code>
+  &lt;?php
+
+    $myTitle = "Hello World!";
+
+  ?&gt;
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;&lt;?php echo $myTitle; ?&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+  
+      &lt;?php echo $myTitle; ?&gt;
+
+    &lt;/body&gt;
+  &lt;/html&gt;
+
+</code></pre>
+                    </section>
+
+                </section>
+
+                <section>
+
+                    <section>
+                        <h1>Variables &amp; Typing</h1>
+                    </section>
+
+                    <section>
+                        <h3>String + Numbers</h3>
+<pre><code>
+  &lt;?php
+
+    // PHP is weakly typed (just like JS)
+    $var = "Assigned value";
+    $var = 3.14; // $var is 3.14
+
+    /*
+      This becomes a little icky when
+      you're doing stuff like this:
+    */
+
+    $x = 1 + "1"; // $x is 2
+    $y = 1 . "1"; // $y is 11
+
+  ?&gt;
+
+</code></pre>
+                        <p>Manual: <a href="http://php.net/manual/en/language.types.integer.php">Integers</a>, <a href="http://php.net/manual/en/language.types.float.php">Floats</a>, <a href="http://php.net/manual/en/language.types.string.php">Strings</a></p>
+                    </section>
+
+                    <section>
+                        <h3>String Concatenation</h3>
+<pre><code>
+  &lt;?php
+
+      $name = "Elvis";
+      $surname = "Presley";
+      $nickname = "The King";
+
+      $dotNotation = $name . ' "' . $nickname . '" ' . $surname;
+      
+      // or
+
+      $inline = "$name \"$nickname\" $surname";
+
+      // Both will output: Elvis "The King" Presley
+
+  ?&gt;
+
+</code></pre>
+                        <p>Manual: <a href="http://php.net/manual/en/language.types.array.php">Strings</a></p>
+                    </section>
+
+                    <section>
+                        <h3>Arrays</h3>
+<pre><code>
+  &lt;?php
+
+    $basicArray = array (1, 2 , 3);
+
+    $associativeArray = array ("Name" => "Willem", "Surname" => "Labu");
+
+  ?&gt;
+
+</code></pre>
+                        <p>Manual: <a href="http://php.net/manual/en/language.types.array.php">Arrays</a></p>
+                    </section>
+
+                    <section>
+                        <p>There's a whole bunch of information on the different types inside PHP, go have a look <a href="http://php.net/manual/en/language.types.php">here</a>.</p>
+                        <p><small>The <em>Object</em> docs are a real page turner :P</small></p>
+                    </section>
+
+                </section>
+
+                <section>
+
+                    <section>
+                        <h1>Operators</h1>
+                        <p>Do <em>stuff</em> with variables</p>
+                    </section>
+
+                    <section>
+                        <h3>Arithmetic</h3>
+<pre><code>
+  &lt;?php
+
+    // Addition
+    $var = 1 + 1; // 2
+
+    // Subtraction
+    $var = 1 - 1; // 0
+
+    // Negation
+    $var = -$a; // The oposite of $a
+
+    // Division
+    $var = 2 / 1; // 2
+
+    // Multiplication
+    $var = 2 * 3; // 6
+
+    // Modulus (Remainder)
+    $var = 20 % 6; // 2
+
+    // Exponentiation
+    $var = 10 ** 2; // 100
+
+    // Increment &amp; Decrement
+    $a = 12;
+    $a++; // 13
+    $a--; // 12
+
+
+  ?&gt;
+
+</code></pre>
+                        <p>Manual: <a href="http://php.net/manual/en/language.operators.arithmetic.php">Arithmetic Operators</a></p>
+                    </section>
+
+                    <section>
+                        <h3>Comparison</h3>
+<pre><code>
+  &lt;?php
+
+    // Less than
+    $var = (1 &lt; 2); // true
+    $var = (2 &lt;= 2); // true
+
+    // Greater than
+    $var = (1 &gt; 2); // false
+    $var = (2 &gt;= 2); // true
+
+    // Equality
+    $var = (2 == 2); // true
+    $var = (2 != 2); // false
+
+  ?&gt;
+
+</code></pre>
+                        <p>Manual: <a href="http://php.net/manual/en/language.operators.comparison.php">Comparison Operators</a></p>
+                    </section>
+
+                    <section>
+                        <h3>Logic</h3>
+<pre><code>
+  &lt;?php
+
+    $a = true;
+    $b = 123;
+
+    // AND
+    $c = $a &amp;&amp; ($b == 1); // false
+    $c = $a &amp;&amp; ($b == 123); // true
+
+    // OR
+    $c = ($a == true) || ($b = 1); // true
+    $c = ($a == false) || ($b = 123); // true
+
+    // NOT
+    $c = !($b == 1); // true
+
+  ?&gt;
+
+</code></pre>
+                    </section>
+
+                    <section>
+                        <h3>Conditional</h3>
+<pre><code>
+  &lt;?php
+
+    if (condition) {
+
+      Do things here if ther condition returns `truthy`.
+
+    } else {
+
+      Do something else (falsey condition)
+
+    }
+
+  ?&gt;
+
+</code></pre>
+                        <p>Manual: <a href="http://php.net/manual/en/language.types.boolean.php">Truthiness (boolean)</a>
+                    </section>
+
+                </section>
+
+                <section>
+
+                <section>
+                    <h1>Logic &amp; Control Structures</h1>
+                </section>
+
+                <section>
+                    <h3>If, Then, Else</h3>
+<pre><code>
+  &lt;?php
+
+    if ($userHasSignedIn) {
+      $message = "Welcome!";
+    } else {
+      $message = "Please sign in.";
+    }
+
+    // Can be written as
+    $message = $userHasSignedIn ? "Welcome!" : "Please sign in";
+
+  ?&gt;
+
+</code></pre>
+                </section>
+
+                <section>
+                    <h3>Switch</h3>
+<pre><code>
+  &lt;?php
+
+    switch ($favouriteColour) {
+
+      case "red":
+        doSomething();
+        break;
+
+      case "blue":
+        doSomethingForBlue();
+        break;
+
+      case "green":
+        doSomethingForGreen();
+        break;
+
+      default:
+        doTheDefaultThing();
+        break;
+
+    }
+
+  ?&gt;
+
+</code></pre>
+                </section>
+
+                <section>
+                    <h3>For Loop</h3>
+<pre><code>
+  &lt;?php
+
+    for ($index = 0; $index &lt;= $arrayLength; $index++) {
+
+      // Do stuff
+
+    }
+
+  ?&gt;
+
+</code></pre>
+                </section>
+
+                <section>
+                    <h3>Foreach Loop #1</h3>
+<pre><code>
+  &lt;?php
+
+    // Normal array
+    $people = array ("Becky", "Graham", "Sean", "Duncan");
+
+    foreach ($people as $person) {
+
+      echo $person;
+
+    }
+
+    // Will print: "BeckyGrahamSeanDuncan"
+
+  ?&gt;
+
+</code></pre>
+                </section>
+
+                <section>
+                    <h3>Foreach Loop #2</h3>
+<pre><code>
+  &lt;?php
+
+    // Associative array
+    $array = array("a" => 1, "b" => 2, "c" => 3);
+
+    foreach ($array as $key => $value) {
+
+      echo "$key: $value // ";
+
+    }
+
+    // Will print: "a: 1 // b: 2 // c: 3 // "
+
+  ?&gt;
+
+</code></pre>
+                </section>
+
+                </section>
+
+                <section>
+
+                    <section>
+                        <h1>Debugging</h1>
+                        <p>Knowing how to debug safely makes your life <em>better</em>.</p>
+                    </section>
+
+                    <section>
+                        <p>Because PHP is a scripting language, it can't really be stepped through like Obj-C, Java, C#, etc.</p>
+                        <p><small>This is one of the biggest drawbacks with PHP.</small></p>
+                        <p>Therefore, we have to stop the code's execution manually to check that we're still on track.</p>
+                    </section>
+
+                    <section>
+                        <h4>Debug method</h4>
+                        <h2>1 of 2</h2>
+<pre><code>
+  &lt;?php
+
+    $a = array ('a' => 'apple', 'b' => 'banana', 'c' => array ('x', 'y', 'z'));
+
+    echo "&lt;pre&gt;";
+    print_r($a);
+    echo "&lt;/pre&gt;";
+    
+    die();
+
+  ?&gt;
+
+</code></pre>
+                        <code>Manual: <a href="http://php.net/manual/en/function.print-r.php" target="_blank">print_r()</a></code>
+                    </section>
+
+                    <section>
+                        <h4>The previous slide will output</h4>
+<pre><code>
+  Array
+  (
+      [a] => apple
+      [b] => banana
+      [c] => Array
+          (
+              [0] => x
+              [1] => y
+              [2] => z
+          )
+  )
+
+</code></pre>
+                    </section>
+
+                    <section>
+                        <h4>Debug method</h4>
+                        <h2>2 of 2</h2>
+<pre><code>
+  &lt;?php
+
+    $b = array(1, 2, array("a", "b", "c"));
+
+    echo "&lt;pre&gt;";
+    var_dump($b);
+    echo "&lt;/pre&gt;";
+    
+    die();
+
+  ?&gt;
+
+</code></pre>
+                        <code>Manual: <a href="http://php.net/manual/en/function.var-dump.php" target="_blank">var_dump()</a></code>
+                    </section>
+
+                    <section>
+                        <h4>The previous slide will output</h4>
+<pre><code>
+  array(3) {
+      [0]=> int(1)
+      [1]=> int(2)
+      [2]=> array(3) {
+          [0]=> string(1) "a"
+          [1]=> string(1) "b"
+          [2]=> string(1) "c"
+      }
+  }
+
+</code></pre>
+                    </section>
+
+                </section>
+
+                <section>
+
+                    <section>
+                        <h1>Git</h1>
+                        <h3><em>Super</em>&nbsp; Easy Version Control</h3>
+                        <p><small>Why you shouldn't be scared of your console</small></p>
+                    </section>
+
+                    <section>
+                        <h2>What is Git?</h2>
+                        <p>It's a Version Control System.</p>
+                        <p><b>Never lose work again!</b> Save <em>every</em> file, and <em>every</em> step along the way, of your <em>entire</em> project.</p>
+                        <p>It allows you to work with other people <b>on the same code</b>, without overwriting each other's work.</p>
+                    </section>
+
+                    <section>
+                        <h2>How does Git work?</h2>
+                        <p>There are three (conceptual) areas in any Git project:</p>
+                        <ul>
+                            <li class="fragment">Repository</li>
+                            <li class="fragment">Working Directory</li>
+                            <li class="fragment">Staging Area</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <img src="http://git-scm.com/book/en/v2/book/01-introduction/images/areas.png" />
+                    </section>
+
+                    <section>
+                        <h3>The 4 Basics of Git</h3>
+                        <ol>
+                            <li class="fragment">pull</li>
+                            <li class="fragment">add</li>
+                            <li class="fragment">commit</li>
+                            <li class="fragment">push</li>
+                        </ol>
+                    </section>
+
+                </section>
+
+                <section>
+                    
+                    <h1>#ToDo</h1>
+
+                    <!--
+
+                        #ToDo in class.
+
+                        Add: Github URL for this project.
+                             Demo how to clone, add, commit and push to this repo.
+
+                    -->
+
+                </section>
+
+                <section>
+
+                    <section>
+                        <h1>Homework</h1>
+                    </section>
+
+                    <section>
+                        <h3>Task 1</h3>
+                        <p>Create a github profile.</p>
+                        <p>Fork this repo.</p>
+                        <p>Clone the fork to your machine.</p>
+                    </section>
+
+                    <section>
+                        <h3>Task 2</h3>
+                        <p>Complete the task in the <code>homework</code> directory.</p>
+                    </section>
+
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // Full list of configuration options available at:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // Optional reveal.js plugins
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
