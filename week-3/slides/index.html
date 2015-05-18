@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Intro to PHP</title>
+
+		<meta name="description" content="An introduction to PHP at the Open Window.">
+		<meta name="author" content="Willem Labu">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Intro to PHP</h1>
+					<h3>Week 3</h3>
+					<p>
+						<small><a href="http://pwl.co.za">Willem Labu</a> / <a href="http://twitter.com/willemlabu">@willemlabu</a></small>
+					</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Last week</h2>
+						<ul>
+							<li>Homework review</li>
+							<li>Refresh on Git</li>
+							<li>PHP Functions</li>
+							<li>PHP Parameters</li>
+							<li>..Didn't quite get to API's</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>This week</h2>
+						<ul>
+							<li>API</li>
+							<li>Databases</li>
+							<li>Assignment</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Coming Up</h2>
+						<ul>
+							<li>Authentication</li>
+							<li>Frameworks</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>API</h1>
+						<h4>Application Programming Interface</h4>
+					</section>
+					<section>
+						<p>An API is a set of routines, protocols, and tools for building software applications.</p>
+						<p>An API expresses a software component in terms of its operations, inputs, outputs, and underlying types. An API defines functionalities that are independent of their respective implementations, which allows definitions and implementations to vary without compromising each other. A good API makes it easier to develop a program by providing all the building blocks. A programmer then puts the blocks together.</p>
+					</section>
+					<section>
+						<p>Code behind a bunch of URLs that do things to data</p>
+					</section>
+					<section>
+						<ul>
+							<li>Code behind</li>
+							<li>a bunch or URLs</li>
+							<li>that do things</li>
+							<li>to data</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Quick Example</h2>
+						<p>Facebook's Graph API</p>
+					</section>
+					<section>
+						<p><a href="https://developers.facebook.com/tools/explorer/145634995501895/" target="_blank">Graph Explorer</a>
+						<p><a href="https://graph.facebook.com/562345419" target="_blank">https://graph.facebook.com</a>
+					</section>
+					<section>
+						<h2>
+							<span class="fragment" data-fragment-index="1">DATA</span>
+							<span class="fragment" data-fragment-index="2">&#8640;</span>
+							<span class="fragment" data-fragment-index="3">ENDPOINT</span>
+						</h2>
+						<h2>
+							<span class="fragment" data-fragment-index="6">CLIENT</span>
+							<span class="fragment" data-fragment-index="5">&#8637;</span>
+							<span class="fragment" data-fragment-index="4">SERVER</span>
+						</h2>
+					</section>
+					<section>
+						<h1>
+							<span class="fragment">DATA</span>
+							<span class="fragment">&#8652;</span>
+							<span class="fragment">URL</span>
+						</h1>
+					</section>
+					<section>
+						<h3>Types of Request</h3>
+						<p>We already know <code>GET</code> and <code>POST</code></p>
+					</section>
+					<section>
+						<ul>
+							<li>GET</li>
+							<li>POST</li>
+							<li class="fragment">PUT</li>
+							<li class="fragment">DELETE</li>
+						</ul>
+						<hr>
+						<p>
+							<small class="fragment">&bull; HEAD</small>
+							<small class="fragment">&bull; OPTIONS</small>
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>AJAX</h2>
+					</section>
+					<section>
+						<h2>The simplest request</h2>
+<pre><code>
+  $.ajax({
+    url: "test.html"
+  })
+  .done(function(response) {
+    // Do things
+  });
+
+</code></pre>
+						<p><small><a href="http://api.jquery.com/jquery.ajax/">jQuery Docs: $.ajax()</a></small></p>
+					</section>
+					<section>
+						<h2>A PHP Response?</h2>
+<pre><code>
+  $.ajax({
+    url: "test.php"
+  })
+  .done(function(response) {
+    // Do things with the response
+  });
+
+</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Databases</h2>
+					</section>
+
+					<section>
+						<p><b>MySQL</b></p>
+					</section>
+
+					<section>
+						<p><a href="http://localhost/phpmyadmin" target="_blank">PHPMyAdmin</a></p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Group Task</h1>
+						<a href="../homework">Homework</a>
+					</section>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

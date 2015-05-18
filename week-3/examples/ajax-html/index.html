@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX</title>
+</head>
+<body>
+
+	<div id="plonk"></div>
+
+	<!-- We need to include jQuery on the page, obviously. -->
+	<script src="../_vendor/jquery.js"></script>
+
+	<!--
+		Here's our code that loads things from other pages.
+		This could (should) sit in a different JS file that
+		is included like jQuery above.
+	-->
+	<script>
+
+		$('document').ready(function(){
+
+			$.ajax({
+				url: "test.html"
+			})
+			.done(function(response) {
+
+				// Do things
+				console.log('This is what is returned:', response);
+
+				$('#plonk').html(response);
+
+			});
+
+		});
+
+	</script>
+
+</body>
+</html>
