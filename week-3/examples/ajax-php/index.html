@@ -20,17 +20,19 @@
 		$('document').ready(function(){
 
 			$.ajax({
-				url: "test.php" // or: better.php
+				url: "better.php" // or: test.php
 			})
 			.done(function(response) {
 
 				// Do things
 				console.log('This is what is returned:', response);
 
-				// resp = JSON.parse(response);
-				// console.log('JSON.parse():', resp);
+				resp = JSON.parse(response);
+				console.log('JSON.parse():', resp);
 
-				$('#plonk').html(response);
+				var decoded = $('<div/>').html(resp.body).text()
+
+				$('#plonk').html( decoded );
 
 			});
 

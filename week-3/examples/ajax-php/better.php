@@ -15,7 +15,6 @@
 	// Assign the variables!
 	$resp->code = 200;
 	$resp->status = "success";
-	$resp->body = "<div>This copy sits in <b>better.php</b></div>"; // htmlentities
+	$resp->body = htmlentities("<h1>Hello from <b>better.php</b></h1>");
 
 	echo json_encode($resp);
-

@@ -15,25 +15,7 @@
 		This could (should) sit in a different JS file that
 		is included like jQuery above.
 	-->
-	<script>
-
-		$('document').ready(function(){
-
-			$.ajax({
-				url: "test.html"
-			})
-			.done(function(response) {
-
-				// Do things
-				console.log('This is what is returned:', response);
-
-				$('#plonk').html(response);
-
-			});
-
-		});
-
-	</script>
+	<script src="javascript.js"></script>
 
 </body>
 </html>
